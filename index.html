@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Predictor & Services</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+<div class="overlay">
+
+  <!-- ========================================= -->
+  <!-- Travel Expense Predictor -->
+  <!-- ========================================= -->
+
+  <div id="interface1">
+
+    <h1>🌍 Travel Expense Predictor</h1>
+
+    <form id="expenseForm" class="horizontal-form">
+
+      <div class="form-group">
+        <label for="startLocation">
+          Starting Location:
+        </label>
+
+        <input
+          type="text"
+          id="startLocation"
+          placeholder="Enter starting location"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="destination">
+          Destination:
+        </label>
+
+        <input
+          type="text"
+          id="destination"
+          placeholder="Enter destination"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="mode">
+          Mode of Transport:
+        </label>
+
+        <select id="mode">
+          <option value="car">Car</option>
+          <option value="train">Train</option>
+          <option value="bus">Bus</option>
+          <option value="flight">Flight</option>
+        </select>
+      </div>
+
+      <button
+        type="button"
+        onclick="calculateDistance()">
+        Calculate
+      </button>
+
+    </form>
+
+    <div class="result">
+
+      <h2 id="resultText">
+        Your estimated travel expenses will be displayed here.
+      </h2>
+
+      <p id="distanceText"></p>
+
+    </div>
+
+    <button
+      id="nextButton"
+      onclick="showNextInterface()">
+      Next
+    </button>
+
+  </div>
+
+  <!-- ========================================= -->
+  <!-- Available Services -->
+  <!-- ========================================= -->
+
+  <div id="interface2" style="display:none;">
+
+    <h1>Available Services</h1>
+
+    <div class="icon-container">
+
+      <div class="icon" id="hotel">
+        <i class="fas fa-hotel"></i>
+        <p>Hotel</p>
+      </div>
+
+      <div class="icon" id="transport">
+        <i class="fas fa-bus"></i>
+        <p>Transport</p>
+      </div>
+
+      <div class="icon" id="services">
+        <i class="fas fa-concierge-bell"></i>
+        <p>Local</p>
+      </div>
+
+      <div class="icon" id="weather">
+        <i class="fas fa-cloud-sun"></i>
+        <p>Weather</p>
+      </div>
+
+      <div class="icon" id="carbon">
+        <i class="fas fa-leaf"></i>
+        <p>Carbon</p>
+      </div>
+
+    </div>
+
+    <button onclick="showPreviousInterface()">
+      Go Back
+    </button>
+
+  </div>
+
+  <!-- ========================================= -->
+  <!-- Local Services -->
+  <!-- ========================================= -->
+
+  <div id="localServicesInterface" style="display:none;">
+
+    <h1>Local Services</h1>
+
+    <div class="icon-container">
+
+      <div class="icon" id="food">
+        <i class="fas fa-utensils"></i>
+        <p>Food</p>
+      </div>
+
+      <div class="icon" id="emergencyContacts">
+        <i class="fas fa-phone-alt"></i>
+        <p>Emergency</p>
+      </div>
+
+      <div class="icon" id="regionalTraveling">
+        <i class="fas fa-car"></i>
+        <p>Regional</p>
+      </div>
+
+    </div>
+
+    <button onclick="showPreviousInterfaceFromLocalServices()">
+      Back
+    </button>
+
+  </div>
+
+  <!-- ========================================= -->
+  <!-- Transport Facilities -->
+  <!-- ========================================= -->
+
+  <div id="transportFacilitiesInterface" style="display:none;">
+
+    <h1>Transport Facilities</h1>
+
+    <div class="icon-container">
+
+      <div class="icon" id="instantBooking">
+        <i class="fas fa-calendar-check"></i>
+        <p>Booking</p>
+      </div>
+
+      <div class="icon" id="carRenting">
+        <i class="fas fa-car"></i>
+        <p>Renting</p>
+      </div>
+
+    </div>
+
+    <button onclick="showPreviousInterfaceFromTransportFacilities()">
+      Back
+    </button>
+
+  </div>
+
+  <!-- ========================================= -->
+  <!-- Emergency Contacts -->
+  <!-- ========================================= -->
+
+  <div id="emergencyInterface" style="display:none;">
+
+    <h1>Emergency Contacts</h1>
+
+    <ul>
+      <li>🚓 Police : 100</li>
+      <li>🚑 Ambulance : 102</li>
+      <li>🚒 Fire : 101</li>
+    </ul>
+
+    <button onclick="showPreviousInterfaceFromEmergency()">
+      Back
+    </button>
+
+  </div>
+
+  <!-- ========================================= -->
+  <!-- Weather Section -->
+  <!-- ========================================= -->
+
+  <div id="weatherInterface" style="display:none;">
+
+    <h1>🌤 Live Weather Information</h1>
+
+    <div class="weather-card">
+
+      <div id="weatherData">
+        Enter destination and click Weather.
+      </div>
+
+    </div>
+
+    <button onclick="showPreviousInterfaceFromWeather()">
+      Back
+    </button>
+
+  </div>
+
+  <!-- ========================================= -->
+  <!-- Carbon Footprint -->
+  <!-- ========================================= -->
+
+  <div id="carbonInterface" style="display:none;">
+
+    <h1>🌱 Carbon Footprint Report</h1>
+
+    <div class="carbon-card">
+
+      <div id="carbonData">
+        Calculate distance first.
+      </div>
+
+    </div>
+
+    <button onclick="showPreviousInterfaceFromCarbon()">
+      Back
+    </button>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

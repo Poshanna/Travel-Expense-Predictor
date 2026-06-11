@@ -174,10 +174,4 @@ Interested in:
 - Artificial Intelligence
 - Software Development
 
----
 
-## 📜 License
-
-This project is developed for educational and learning purposes.
-
-Feel free to use and modify it for academic projects and personal learning.
